@@ -1,14 +1,15 @@
 import React from "react";
+import Link from '../link/Link'
 
 const Card = ({
   title,
   path,
   image
 }) => (
-  <a href={`/${path}`} className='card'>
+  <Link href={`/${path}`} className='card'>
     <h2>{title}</h2>
     <img src={image}/>
-  </a>
+  </Link>
 )
 
 export default Card
