@@ -26,6 +26,9 @@
     "react": "^15.0.0 || ^16.0.0",
     "react-dom": "^15.0.0 || ^16.0.0"
   },
+  "dependencies": {
+    "is-url-external": "^1.0.3"
+  },
   "devDependencies": {
     "@svgr/rollup": "^2.4.1",
     "babel-core": "^6.26.3",
@@ -42,7 +45,6 @@
     "eslint-plugin-react": "^7.11.0",
     "exenv": "^1.2.2",
     "gh-pages": "^1.2.0",
-    "is-url-external": "^1.0.3",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-lazyload": "^2.3.0",
