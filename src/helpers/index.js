@@ -1,0 +1,1 @@
+export { default as isLinkExternal } from './isLinkExternal/isLinkExternal'

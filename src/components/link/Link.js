@@ -1,8 +1,21 @@
 import React from 'react';
 import { Link as RouterLink} from 'react-router-dom';
+import { isLinkExternal } from '../../helpers'
 
 const Link = ({ href, children, ...props }) => {
+  console.log(href, children)
   if (href) {
+    if (isLinkExternal(href)) {
+      return (
+        <a
+          href={href}
+          target='_blank'
+          {...props}
+        >
+          {children}
+        </a>
+      )
+    }
     return (
       <RouterLink 
         to={{

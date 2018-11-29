@@ -6,7 +6,7 @@ const Card = ({
   path,
   image
 }) => (
-  <Link href={`/${path}`} className='card'>
+  <Link href={`${path}`} className='card'>
     <h2>{title}</h2>
     <img src={image}/>
   </Link>
