@@ -1,0 +1,14 @@
+parser: babel-eslint
+ extends:
+  - airbnb
+ # 2 / true => on
+# 0 / false => off
+# 1 - warning
+ rules:
+  import/no-unresolved: 0 # account for aliases
+  import/prefer-default-export: 0
+  no-console: 0
+  no-underscore-dangle: 0
+  no-unused-vars: 0 # TEMP (while commenting out during dev)
+  react/jsx-filename-extension: 0
+  react/no-array-index-key: 0

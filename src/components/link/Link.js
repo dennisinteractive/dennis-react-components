@@ -3,7 +3,6 @@ import { Link as RouterLink} from 'react-router-dom';
 import { isLinkExternal } from '../../helpers'
 
 const Link = ({ href, children, ...props }) => {
-  console.log(href, children)
   if (href) {
     if (isLinkExternal(href)) {
       return (
