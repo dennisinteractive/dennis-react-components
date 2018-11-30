@@ -8,7 +8,7 @@ export default class App extends Component {
       <div>
         <Card 
           title='Example Card'
-          link='/'
+          path='https://placeimg.com/640/480/animals'
           image='https://placeimg.com/640/480/animals'
         />
       </div>

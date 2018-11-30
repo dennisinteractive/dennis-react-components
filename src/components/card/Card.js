@@ -4,6 +4,8 @@ import Heading from '../heading/Heading'
 import Image from '../image/Image'
 import Link from '../link/Link'
 
+import './card.scss';
+
 const Card = ({
   title,
   path,
