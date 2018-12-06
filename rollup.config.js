@@ -9,18 +9,32 @@ import svgr from '@svgr/rollup'
 import pkg from './package.json'
 
 export default {
-  input: 'src/index.js',
+  input: [
+    'src/index.js',
+    'src/components/card/Card.js'
+  ],
   output: [
+    // ES module version, for modern browsers
     {
-      file: pkg.main,
-      format: 'cjs',
+      // file: pkg.main,
+      dir: "dist/nomodule",
+      format: "cjs",
       sourcemap: true
     },
+    // SystemJS version, for older browsers
     {
-      file: pkg.module,
-      format: 'es',
+      // file: pkg.module,
+      dir: "dist/module",
+      format: "es",
       sourcemap: true
     }
+  ],
+  // experimentalDynamicImport: true,
+  experimentalCodeSplitting: true,
+  external: [
+    'react',
+    'prop-types',
+    '@loadable/component'
   ],
   plugins: [
     external(),
@@ -31,7 +45,20 @@ export default {
     svgr(),
     babel({
       exclude: 'node_modules/**',
-      plugins: [ 'external-helpers' ]
+      "presets": [
+        [
+          "@babel/preset-env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ],
+      plugins: [ 
+        '@babel/plugin-syntax-dynamic-import',
+        '@loadable/babel-plugin'
+      ]
     }),
     resolve(),
     commonjs()

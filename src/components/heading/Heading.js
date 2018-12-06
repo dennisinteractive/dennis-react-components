@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Title = ({ size, text }) => {
   const Tag = `h${size}`;
-  return <Tag>{text}</Tag>;
+  return <Tag>{text} (library version)</Tag>;
 };
 
 Title.defaultProps = {

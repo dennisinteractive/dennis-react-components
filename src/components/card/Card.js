@@ -1,10 +1,12 @@
 import React from "react";
 import PropTypes from 'prop-types';
-import Heading from '../heading/Heading'
-import Image from '../image/Image'
-import Link from '../link/Link'
+// import loadable from '@loadable/component';
+// import { Heading, Image, Link } from './'
+// import Heading from '../heading/Heading'
+// import Image from '../image/Image'
+// import Link from '../link/Link'
 
-import './card.scss';
+// import './card.scss';
 
 const Card = ({
   title,
@@ -12,23 +14,24 @@ const Card = ({
   image,
   children
 }) => (
-  <Link href={`${path}`} className='card'>
-    { title &&
-      <Heading
-        text={title}
-        size={3}
-      />
-    }
-    { image && 
-      <Image
-        src={image.src}
-        alt={image.alt}
-        width={image.width}
-        height={image.height}
-      />
-    }
-    {children}
-  </Link>
+  <p>FUCK YOU JS</p>
+  // <Link href={`${path}`} className='card'>
+  //   { title &&
+  //     <Heading
+  //       text={title}
+  //       size={3}
+  //     />
+  //   }
+  //   { image && 
+  //     <Image
+  //       src={image.src}
+  //       alt={image.alt}
+  //       width={image.width}
+  //       height={image.height}
+  //     />
+  //   }
+  //   {children}
+  // </Link>
 )
 
 Card.defaultProps = {
