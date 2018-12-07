@@ -1,18 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Title = ({ size, text }) => {
+const Title = ({ size, text, className }) => {
   const Tag = `h${size}`;
-  return <Tag>{text} (library version)</Tag>;
+  return <Tag className={className}>{text}</Tag>;
 };
 
 Title.defaultProps = {
-  size: 1
-}
+  size: 1,
+  className: null,
+};
 
 Title.propTypes = {
   text: PropTypes.string.isRequired,
-  size: PropTypes.number
-}
+  className: PropTypes.string,
+  size: PropTypes.number,
+};
 
 export default Title;

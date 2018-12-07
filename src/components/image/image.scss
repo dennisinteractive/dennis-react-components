@@ -1,0 +1,16 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.img--placeholder {
+  &:not(.img--placeholder-nopadding) {
+    position: relative;
+    noscript, 
+    noscript img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    } 
+  }
+}

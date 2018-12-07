@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Card> should match snapshot 1`] = `
+<ForwardRef
+  className="card"
+  href="test-path"
+>
+  <ForwardRef
+    className="title"
+    size={3}
+    text="Test Title"
+  />
+  <ForwardRef
+    alt="Test Image"
+    src="https://placeimg.com/640/480/animals"
+  />
+</ForwardRef>
+`;

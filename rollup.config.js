@@ -10,31 +10,28 @@ import pkg from './package.json'
 
 export default {
   input: [
-    'src/index.js',
-    'src/components/card/Card.js'
+    'src/components/card/Card.js',
+    'src/components/heading/Heading.js',
+    'src/components/image/Image.js',
+    'src/components/link/Link.js',
+    'src/components/list/List.js',
   ],
   output: [
-    // ES module version, for modern browsers
     {
-      // file: pkg.main,
-      dir: "dist/nomodule",
+      dir: "dist",
       format: "cjs",
-      sourcemap: true
-    },
-    // SystemJS version, for older browsers
-    {
-      // file: pkg.module,
-      dir: "dist/module",
-      format: "es",
       sourcemap: true
     }
   ],
-  // experimentalDynamicImport: true,
   experimentalCodeSplitting: true,
   external: [
-    'react',
+    'classnames',
+    'is-url-external',
     'prop-types',
-    '@loadable/component'
+    'react',
+    'react-dom',
+    'react-lazyload',
+    'react-router-dom'
   ],
   plugins: [
     external(),
@@ -54,10 +51,6 @@ export default {
             }
           }
         ]
-      ],
-      plugins: [ 
-        '@babel/plugin-syntax-dynamic-import',
-        '@loadable/babel-plugin'
       ]
     }),
     resolve(),

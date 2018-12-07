@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link as RouterLink} from 'react-router-dom';
-import { isLinkExternal } from '../../helpers'
+import { Link as RouterLink } from 'react-router-dom';
+import { isLinkExternal } from '../../helpers';
 
 const Link = ({ href, children, ...props }) => {
   if (href) {
@@ -8,17 +8,18 @@ const Link = ({ href, children, ...props }) => {
       return (
         <a
           href={href}
-          target='_blank'
+          target="_blank"
+          rel="noopener noreferrer"
           {...props}
         >
           {children}
         </a>
-      )
+      );
     }
     return (
-      <RouterLink 
+      <RouterLink
         to={{
-          pathname: href
+          pathname: href,
         }}
         {...props}
       >
@@ -26,7 +27,8 @@ const Link = ({ href, children, ...props }) => {
       </RouterLink>
     );
   }
-  // if no url is passed render a div instead (this allows us to to conditional wrapping of elements e.g. Card)
+  // if no url is passed render a div instead
+  // (this allows us to to conditionally wrap elements e.g. Card)
   return (
     <div {...props}>
       {children}
@@ -34,4 +36,4 @@ const Link = ({ href, children, ...props }) => {
   );
 };
 
-export default Link
+export default Link;
