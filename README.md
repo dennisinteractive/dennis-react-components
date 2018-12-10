@@ -2,7 +2,7 @@
 
 > Reusable React components for Dennis brands
 
-Built with https://github.com/transitive-bullshit/create-react-library
+Built with https://github.com/transitive-bullshit/create-react-library (which uses [rollup](https://github.com/rollup/rollup) to compile
 
 ## Install
 
