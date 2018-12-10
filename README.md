@@ -31,11 +31,11 @@ _The verboise relative path is unavoidable unfortunately, as neither variables o
 
 Using this method components from both the library and at app level can import components using a simple named import syntax, without having to be aware of the dynamic loading
 
-If an app needs to override a library component then the export from the Atomic folder index.js file can just be changed to use a local copy
-
 ```jsx
 import { Heading, Image, Link } from 'Atoms';
 ```
+
+If an app needs to override a library component then the export from the Atomic folder index.js file can just be changed to use a local copy
 
 ## Adding components to the library
 
