@@ -1,9 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Heading from '../heading/Heading';
-import Image from '../image/Image';
-import Link from '../link/Link';
+import { Heading, Image, Link } from 'Atoms';
 
 import './card.scss';
 
