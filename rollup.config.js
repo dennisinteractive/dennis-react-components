@@ -5,16 +5,19 @@ import postcss from 'rollup-plugin-postcss'
 import resolve from 'rollup-plugin-node-resolve'
 import url from 'rollup-plugin-url'
 import svgr from '@svgr/rollup'
+import alias from 'rollup-plugin-alias';
+import path from 'path';
 
 import pkg from './package.json'
 
 export default {
   input: [
-    'src/components/card/Card.js',
-    'src/components/heading/Heading.js',
-    'src/components/image/Image.js',
-    'src/components/link/Link.js',
-    'src/components/list/List.js',
+    // could probably write a function to generate these paths
+    'src/components/atoms/heading/Heading.js',
+    'src/components/atoms/image/Image.js',
+    'src/components/atoms/link/Link.js',
+    'src/components/atoms/list/List.js',
+    'src/components/molecules/card/Card.js',
   ],
   output: [
     {
@@ -35,6 +38,11 @@ export default {
   ],
   plugins: [
     external(),
+    alias({
+      Helpers: path.resolve(__dirname, './src/helpers/index'),
+      Atoms: path.resolve(__dirname, './src/components/atoms/index'),
+      Molecules: path.resolve(__dirname, './src/components/molecules/index'),
+    }),
     postcss({
       minimize: true
     }),

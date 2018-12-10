@@ -48,7 +48,9 @@ const Image = loadable(() => import('./Image'));
 const Link = loadable(() => import('./Link'));
 ```
 
-Ensures that the dynamic loading is handled at the app level instead of the child components getting bundled up unecessarrily inside the Card component
+Ensures that the dynamic loading is handled at the app level instead of the child components getting bundled up unecessarrily inside the Card component.
+
+This means that both the app and the library need to adhere to the same Atomic structure, which seems sensible in any case.
 
 ## ToDos
 

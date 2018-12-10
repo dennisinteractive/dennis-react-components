@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-import { isLinkExternal } from '../../helpers';
+import { isLinkExternal } from 'Helpers';
 
 const Link = ({ href, children, ...props }) => {
   if (href) {
