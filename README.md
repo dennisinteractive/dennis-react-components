@@ -14,15 +14,30 @@ yarn add dennis-react-components
 
 Currently designed to be used with [@loadable/component](https://github.com/smooth-code/loadable-components) to dynamically import components
 
+Both the library and app should use the same [Atomic](http://bradfrost.com/blog/post/atomic-web-design/) folder structure
+
+At the app level each atomic folder (e.g. *Atoms*) should contain an index.js file that exports dynamically loaded components from the component library, e.g:
+
 ```jsx
 import loadable from '@loadable/component';
 
-const Card = loadable(() => import('../../../../node_modules/dennis-react-components/dist/Card'));
+export const Heading = loadable(() => import('../../../../node_modules/dennis-react-components/dist/Heading'));
+export const Image = loadable(() => import('../../../../node_modules/dennis-react-components/dist/Image'));
+export const Link = loadable(() => import('../../../../node_modules/dennis-react-components/dist/Link'));
+export const List = loadable(() => import('../../../../node_modules/dennis-react-components/dist/List'))
 ```
 
-The verboise relative path is unavoidable unfortunately, as neither variables or aliases are accepted as an argument for dynamic imports
+_The verboise relative path is unavoidable unfortunately, as neither variables or aliases are accepted as an argument for dynamic imports_
 
-## Adding components
+Using this method components from both the library and at app level can import components using a simple named import syntax, without having to be aware of the dynamic loading
+
+If an app needs to override a library component then the export from the Atomic folder index.js file can just be changed to use a local copy
+
+```jsx
+import { Heading, Image, Link } from 'Atoms';
+```
+
+## Adding components to the library
 
 * Add new component in it's own folder to [src/components](src/components)
 * Add new component's path to [rollup.config.js](rollup.config.js)
@@ -32,25 +47,7 @@ Any external libraries needed by components should be added to the external sect
 
 ## Importing components within other components
 
-Rather than importing other components directly using relative paths we should use the app's defined Atomic paths
-
-e.g. In the Card component, using:
-
-```jsx
-import { Heading, Image, Link } from 'Atoms';
-```
-
-instead of:
-
-```jsx
-const Heading = loadable(() => import('./Heading'));
-const Image = loadable(() => import('./Image'));
-const Link = loadable(() => import('./Link'));
-```
-
-Ensures that the dynamic loading is handled at the app level instead of the child components getting bundled up unecessarrily inside the Card component.
-
-This means that both the app and the library need to adhere to the same Atomic structure, which seems sensible in any case.
+Any child components imported in other components should be added as an external to [rollup.config.js](rollup.config.js) (for our Atomic named import approach this can be done just by adding the top level Atomic folder - e.g. _Atoms_). This ensures that the child components aren't bundled up with the parent, allowing them to by dynamically loaded by the app.
 
 ## ToDos
 

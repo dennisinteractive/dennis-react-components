@@ -34,7 +34,12 @@ export default {
     'react',
     'react-dom',
     'react-lazyload',
-    'react-router-dom'
+    'react-router-dom',
+    'Atoms',
+    'Molecules',
+    'Organisms',
+    'Templates',
+    'Pages'
   ],
   plugins: [
     external(),
