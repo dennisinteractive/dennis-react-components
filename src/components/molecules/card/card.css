@@ -1,12 +1,12 @@
 .card {
-  $gutter: $gutter-half;
+
   display: flex;
   flex-direction: column;
   background: aliceblue;
-  color: $color-default-text;
+
   text-decoration: none;
   position: relative;
-  .img {
+  /* .img {
     order: -1;
   }
   p {
@@ -15,12 +15,12 @@
   }
   > * {
     margin: 0;
-    margin-bottom: $gutter;
+    // margin-bottom: $gutter;
   }
   > *:not(.img) {
-    padding-left: $gutter;
-    padding-right: $gutter;
-  }
+    // padding-left: $gutter;
+    // padding-right: $gutter;
+  } */
 }
 
 a.card {
@@ -28,8 +28,8 @@ a.card {
   top: 0;
   box-shadow: 0 0 0 transparent;
   transition: box-shadow 0.4s, top 0.2s ease-in-out;
-  &:hover {
+  /* &:hover {
     box-shadow: 2px 2px 4px #d8d8d8;
     top: -4px;
-  }
+  } */
 }
